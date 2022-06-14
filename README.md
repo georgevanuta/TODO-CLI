@@ -10,7 +10,7 @@ Only works on **Linux** or by using **WSL 2**.
 
 ## Installation
 
-`git clone ...`
+`git clone https://github.com/georgevanuta/TODO-CLI`
 
 ## Setup
 

@@ -68,6 +68,7 @@ Initalizes an empty TODO's file in the specified path (*TODO_FILE*).
 
 Adds a new TODO at the end of your TODO's.
 
+-
 | Example: `addtodo "Learn Haskell."`|
 -
 

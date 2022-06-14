@@ -1,7 +1,7 @@
 ######## MAIN .md FILE ##########
 # !!   CHANGE THIS ONE TO    !! #
 # !! YOUR PREFERRED LOCATION !! #
-TODO_FILE = '/preferred/absolute/path/to/todos'
+TODO_FILE = '/preferred/absolute/path'
 
 TODO_HEADER = '# TODO\'s\n\n'
 
@@ -17,22 +17,35 @@ EMPTY_FILE = '[ERROR]: Empty file.'
 
         
 ############## Helpers ##############
+def get_number(line):
+    number = ''
+    
+    for ch in line:
+        if ch == '.':
+            break
+        
+        if ch.isdigit:
+            number += ch
+        
+        
+    if len(number) == 0:
+        return 0
+    
+    return int(number)
+
+def get_status(line):
+    for i in range(0, len(line)):
+        if line[i] == '[' and i < len(line) - 1:
+            return line[i + 1]
+        
+    return 'none'
+
+
 def last_number():
     with open(TODO_FILE, 'r') as f:
         last_line = f.readlines()[-1]
-        
-        num = ''
-        
-        for c in last_line:
-            if c == '.':
-                break
-            if c.isdigit():
-                num = num + c
-                
-        if len(num) == 0:
-            return 0
                         
-        return int(num)
+        return get_number(last_line)
     
 
 def check_line_number(line, todo_number):
@@ -47,12 +60,28 @@ def check_line_number(line, todo_number):
         
         number += digit
         
-    return int(number) == todo_number     
+    return int(number) == todo_number
+
+
+
 
 
 ############ Error Messages ############
-USAGE_ADD      = '[USAGE]: addtodo <TODO>.'
-USAGE_DEL  	   = '[USAGE]: deltodo <TODO_NUMBER>.'
-USAGE_MARK     = '[USAGE]: marktodo <TODO_NUMBER>.'
-INVALID_NUMBER = '[ERROR]: Invalid number.'
-FILE_EXISTS	   = '[ERROR]: File already exists at ' + TODO_FILE + '.'
+USAGE_ADD       = '[USAGE]: addtodo <TODO>.'
+USAGE_DEL  	    = '[USAGE]: deltodo <TODO_NUMBER>.'
+USAGE_MARK      = '[USAGE]: marktodo <TODO_NUMBER>.'
+USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
+USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
+INVALID_NUMBER  = '[ERROR]: Invalid number.'
+INVALID_COMMAND = '[ERROR]: Invalid command.'
+FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
+
+##### Commands descriptions #####
+COMMANDS = '\
+TODO Commands:\n\
+-createtodo\n\
+-addtodo\n\
+-marktodo\n\
+-deltodo\n\
+-replacetodo\n\
+-helptodo'

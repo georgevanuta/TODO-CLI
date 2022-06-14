@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys
+from sys import argv
 
 from misc import TODO_FILE, USAGE_MARK, INVALID_NUMBER, exit_if, last_number, check_line_number
 
@@ -22,7 +22,7 @@ def mark_line(line):
 # marks the line with the line number
 # given as an argument
 def mark(todo_number):
-   with open(TODO_FILE, 'r+') as f:
+    with open(TODO_FILE, 'r+') as f:
         lines = f.readlines()
         
         f.seek(0)
@@ -37,9 +37,9 @@ def mark(todo_number):
 
 
 def main():
-    exit_if(len(sys.argv) != 2 or not sys.argv[1].isnumeric(), USAGE_MARK)
+    exit_if(len(argv) != 2 or not argv[1].isnumeric(), USAGE_MARK)
         
-    todo_number = int(sys.argv[1])
+    todo_number = int(argv[1])
     exit_if(todo_number > last_number() or todo_number < 1, INVALID_NUMBER)
     
     mark(todo_number)

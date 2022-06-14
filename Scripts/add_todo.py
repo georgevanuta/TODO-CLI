@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys
+from sys import argv
 
 from misc import TODO_FILE, USAGE_ADD, exit_if, last_number
 
@@ -14,9 +14,9 @@ def add_todo(todo):
     
 
 def main():
-    exit_if(len(sys.argv) != 2, USAGE_ADD)
+    exit_if(len(argv) != 2, USAGE_ADD)
         
-    todo = sys.argv[1]
+    todo = argv[1]
     add_todo(todo)
 
 

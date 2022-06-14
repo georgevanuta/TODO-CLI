@@ -46,7 +46,7 @@ source ~/.bashrc
 `marktodo 2`\
 `todo`\
 -Delete what we won't do today:\
-`deltodo 3`\
+`deltodo 3`
 
 ## Commands
 
@@ -55,28 +55,28 @@ source ~/.bashrc
 Displays the contents of your TODO's.
 
 | Example: `todo` |
--
+| --- |
 
 ### *createtodo*
 
 Initalizes an empty TODO's file in the specified path (*TODO_FILE*).
 
 | Example: `createtodo`|
--
+| --- |
 
 ### *addtodo*
 
 Adds a new TODO at the end of your TODO's.
 
 | Example: `addtodo "Learn Haskell."`|
--
+| --- |
 
 ### *marktodo*
 
 Marks a **TODO** by the *line number*.
 
 | Example: `marktodo 1` |
--
+| --- |
 
 **Note:** If a **TODO** is already *marked*, **marktodo** will *unmark* it.
 
@@ -85,4 +85,4 @@ Marks a **TODO** by the *line number*.
 Deletes a **TODO** by the *line number*.
 
 | Example: `deltodo 1`|
--
+| --- |

@@ -108,7 +108,7 @@ Shows useful information about the TODO commands or lists them.
 | Example: `helptodo replacetodo` |
 |---|
 
-**Node:** If it receives zero arguments it lists all possible commands.
+**Note:** If it receives zero arguments it lists all possible commands.
 
 ### *replacetodo*
 

@@ -37,7 +37,9 @@ Only works on **Linux** or by using **WSL 2**.
 `alias addtodo="\$PATH_SCRIPTS/add_todo.py"`\
 `alias deltodo="\$PATH_SCRIPTS/delete_todo.py"`\
 `alias marktodo="\$PATH_SCRIPTS/mark_todo.py"`\
-`alias createtodo="\$PATH_SCRIPTS/init_todo.py"`
+`alias createtodo="\$PATH_SCRIPTS/init_todo.py"`\
+`alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
+`alias helptodo="$PATH_SCRIPTS/help_todo.py"`\
 
 *Finally:*
 source ~/.bashrc

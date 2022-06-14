@@ -39,7 +39,7 @@ Only works on **Linux** or by using **WSL 2**.
 `alias marktodo="\$PATH_SCRIPTS/mark_todo.py"`\
 `alias createtodo="\$PATH_SCRIPTS/init_todo.py"`\
 `alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
-`alias helptodo="$PATH_SCRIPTS/help_todo.py"`\
+`alias helptodo="$PATH_SCRIPTS/help_todo.py"`
 
 *Finally:*
 source ~/.bashrc

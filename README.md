@@ -2,7 +2,17 @@
 
 This is a lightweight app that lets you easily keep your tasks in check right from the CLI.
 
-[TOC]
+[TODO's Management in CLI](#todos-management-in-cli)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Setup](#setup)
+  - [Demo](#demo)
+  - [Commands](#commands)
+    - [*todo*](#todo)
+    - [*createtodo*](#createtodo)
+    - [*addtodo*](#addtodo)
+    - [*marktodo*](#marktodo)
+    - [*deltodo*](#deltodo)
 
 ## Prerequisites
 

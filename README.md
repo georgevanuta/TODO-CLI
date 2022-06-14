@@ -34,11 +34,11 @@ Only works on **Linux** or by using **WSL 2**.
 `PATH_TODO=same as TODO_FILE`\
 `PATH_SCRIPTS='/path/to/Scripts'`\
 *instead of **cat** you could use something like **mdless** since this app is *.md* friendly.*\
-`alias todo="cat \$PATH_TODO"`\
-`alias addtodo="\$PATH_SCRIPTS/add_todo.py"`\
-`alias deltodo="\$PATH_SCRIPTS/delete_todo.py"`\
-`alias marktodo="\$PATH_SCRIPTS/mark_todo.py"`\
-`alias createtodo="\$PATH_SCRIPTS/init_todo.py"`\
+`alias todo="cat $PATH_TODO"`\
+`alias addtodo="$PATH_SCRIPTS/add_todo.py"`\
+`alias deltodo="$PATH_SCRIPTS/delete_todo.py"`\
+`alias marktodo="$PATH_SCRIPTS/mark_todo.py"`\
+`alias createtodo="$PATH_SCRIPTS/init_todo.py"`\
 `alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
 `alias helptodo="$PATH_SCRIPTS/help_todo.py"`\
 `alias searchtodo="$PATH_SCRIPTS/search_todo.py`

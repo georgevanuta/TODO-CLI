@@ -15,6 +15,7 @@ This is a lightweight app that lets you easily keep your tasks in check right fr
     - [*deltodo*](#deltodo)
     - [*helptodo*](#helptodo)
     - [*replacetodo*](#replacetodo)
+    - [*searchtodo*](#searchtodo)
 
 ## Prerequisites
 
@@ -39,7 +40,8 @@ Only works on **Linux** or by using **WSL 2**.
 `alias marktodo="\$PATH_SCRIPTS/mark_todo.py"`\
 `alias createtodo="\$PATH_SCRIPTS/init_todo.py"`\
 `alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
-`alias helptodo="$PATH_SCRIPTS/help_todo.py"`
+`alias helptodo="$PATH_SCRIPTS/help_todo.py"`\
+`alias searchtodo="$PATH_SCRIPTS/search_todo.py`
 
 *Finally:*
 source ~/.bashrc
@@ -115,4 +117,11 @@ Shows useful information about the TODO commands or lists them.
 Replaces an existing todo with a new one.
 
 | Example: `replacetodo 3 "Buy Three Bedrooms in a Good Neighborhood"` |
+|---|
+
+### *searchtodo*
+
+Searches for a **highlighted** keyword and returns all TODO's containing it.
+
+| Example: `searchtodo Scala` |
 |---|

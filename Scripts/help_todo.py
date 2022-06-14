@@ -34,6 +34,10 @@ Replaces the line corresponding to the TODO number with the new TODO description
             print('Takes zero or one argument:\n\
 For 0 arguments lists all possible commands.\n\
 For 1 argument prints the description of the command given as an argument.')
+        elif command == 'searchtodo':
+            print('Takes one argument which is the keyword.\n\
+Searches through all lines of the TODO\'s file and prints the lines containins the keyword.')    
+        
         else:
             print(INVALID_COMMAND)
           

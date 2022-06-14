@@ -63,6 +63,30 @@ def check_line_number(line, todo_number):
     return int(number) == todo_number
 
 
+def get_keywords(line):
+    keywords = []
+    
+    i = 0
+    
+    while i < len(line):
+        if i < len(line) - 2 and line[i : i + 2] == '**':
+            
+            i += 2
+            keyword = ''
+            
+            while i < len(line) - 2 and not line[i : i + 2] == '**':
+
+                keyword += line[i]
+                i += 1
+
+            i += 2
+            
+            if not len(keyword) == 0:
+                keywords.append(keyword.lower())
+                
+        i += 1
+            
+    return keywords
 
 
 
@@ -72,6 +96,7 @@ USAGE_DEL  	    = '[USAGE]: deltodo <TODO_NUMBER>.'
 USAGE_MARK      = '[USAGE]: marktodo <TODO_NUMBER>.'
 USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
 USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
+USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD>.'
 INVALID_NUMBER  = '[ERROR]: Invalid number.'
 INVALID_COMMAND = '[ERROR]: Invalid command.'
 FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
@@ -84,4 +109,5 @@ TODO Commands:\n\
 -marktodo\n\
 -deltodo\n\
 -replacetodo\n\
+-searchtodo\n\
 -helptodo'

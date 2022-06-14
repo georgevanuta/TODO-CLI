@@ -42,7 +42,7 @@ source ~/.bashrc
 
 ## Demo
 
--First of all, we need to create the TODO's file:
+-Create the TODO's file:
 `createtodo`
 -Then, check that we created it:
 `todo`
@@ -65,28 +65,28 @@ source ~/.bashrc
 Displays the contents of your TODO's.
 
 | Example: `todo` |
--
+|---|
 
 ### *createtodo*
 
 Initalizes an empty TODO's file in the specified path (*TODO_FILE*).
 
 | Example: `createtodo`|
--
+|---|
 
 ### *addtodo*
 
 Adds a new TODO at the end of your TODO's.
 
 | Example: `addtodo "Learn Haskell."`|
--
+|---|
 
 ### *marktodo*
 
 Marks a **TODO** by the *line number*.
 
 | Example: `marktodo 1` |
--
+|---|
 
 **Note:** If a **TODO** is already *marked*, **marktodo** will *unmark* it.
 
@@ -95,4 +95,20 @@ Marks a **TODO** by the *line number*.
 Deletes a **TODO** by the *line number*.
 
 | Example: `deltodo 1`|
--
+|---|
+
+### *helptodo*
+
+Shows useful information about the TODO commands or lists them.
+
+| Example: `helptodo replacetodo` |
+|---|
+
+**Node:** If it receives zero arguments it lists all possible commands.
+
+### *replacetodo*
+
+Replaces an existing todo with a new one.
+
+| Example: `replacetodo 3 "Buy Three Bedrooms in a Good Neighborhood"` |
+|---|

@@ -13,6 +13,8 @@ This is a lightweight app that lets you easily keep your tasks in check right fr
     - [*addtodo*](#addtodo)
     - [*marktodo*](#marktodo)
     - [*deltodo*](#deltodo)
+    - [*helptodo*](#helptodo)
+    - [*replacetodo*](#replacetodo)
 
 ## Prerequisites
 
@@ -25,7 +27,7 @@ Only works on **Linux** or by using **WSL 2**.
 ## Setup
 
 *First of all*, modify the path to the main todo's file path in --misc.py--\
-(modify the **TODO_FILE** variable).\
+(modify the **TODO_FILE** variable).
 
 *Then*, add the following lines at the bottom of your **~/.bashrc** file:\
 `PATH_TODO=same as TODO_FILE`\
@@ -36,13 +38,15 @@ Only works on **Linux** or by using **WSL 2**.
 `alias deltodo="\$PATH_SCRIPTS/delete_todo.py"`\
 `alias marktodo="\$PATH_SCRIPTS/mark_todo.py"`\
 `alias createtodo="\$PATH_SCRIPTS/init_todo.py"`\
+`alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
+`alias helptodo="$PATH_SCRIPTS/help_todo.py"`
 
-*Finally:*\
+*Finally:*
 source ~/.bashrc
 
 ## Demo
 
--First of all, we need to create the TODO's file:\
+-Create the TODO's file:\
 `createtodo`\
 -Then, check that we created it:\
 `todo`\
@@ -65,28 +69,28 @@ source ~/.bashrc
 Displays the contents of your TODO's.
 
 | Example: `todo` |
-| --- |
+|---|
 
 ### *createtodo*
 
 Initalizes an empty TODO's file in the specified path (*TODO_FILE*).
 
 | Example: `createtodo`|
-| --- |
+|---|
 
 ### *addtodo*
 
 Adds a new TODO at the end of your TODO's.
 
 | Example: `addtodo "Learn Haskell."`|
-| --- |
+|---|
 
 ### *marktodo*
 
 Marks a **TODO** by the *line number*.
 
 | Example: `marktodo 1` |
-| --- |
+|---|
 
 **Note:** If a **TODO** is already *marked*, **marktodo** will *unmark* it.
 
@@ -95,4 +99,20 @@ Marks a **TODO** by the *line number*.
 Deletes a **TODO** by the *line number*.
 
 | Example: `deltodo 1`|
-| --- |
+|---|
+
+### *helptodo*
+
+Shows useful information about the TODO commands or lists them.
+
+| Example: `helptodo replacetodo` |
+|---|
+
+**Note:** If it receives zero arguments it lists all possible commands.
+
+### *replacetodo*
+
+Replaces an existing todo with a new one.
+
+| Example: `replacetodo 3 "Buy Three Bedrooms in a Good Neighborhood"` |
+|---|

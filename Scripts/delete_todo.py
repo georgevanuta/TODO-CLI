@@ -2,26 +2,7 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_DEL, INVALID_NUMBER, exit_if, last_number, check_line_number
-
-
-# used to decrement all the todo's after the one deleted
-def decr_line(line):
-    number = ''
-    
-    for digit in line:
-        if not digit.isdigit():
-            break
-        
-        number += digit
-        
-    if len(number) == 0:
-        return line
-    
-    
-    new_number = str(int(number) - 1)
-    
-    return new_number + line[len(number):]
+from misc import TODO_FILE, USAGE_DEL, INVALID_NUMBER, exit_if, last_number, check_line_number, decr_line
 
 
 # deletes the todo and decrements 

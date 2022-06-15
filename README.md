@@ -16,6 +16,9 @@ This is a lightweight app that lets you easily keep your tasks in check right fr
     - [*helptodo*](#helptodo)
     - [*replacetodo*](#replacetodo)
     - [*searchtodo*](#searchtodo)
+    - [*hltodo*](#hltodo)
+    - [*savetodo*](#savetodo)
+    - [*cleartodo*](#cleartodo)
 
 ## Prerequisites
 
@@ -27,21 +30,24 @@ Only works on **Linux** or by using **WSL 2**.
 
 ## Setup
 
-*First of all*, modify the path to the main todo's file path in --misc.py--\
-(modify the **TODO_FILE** variable).
+*First of all*, modify the path to the main todo's file and to the saves directory in --misc.py--\
+(modify the **TODO_FILE**  and **SAVES** variables).
 
 *Then*, add the following lines at the bottom of your **~/.bashrc** file:\
 `PATH_TODO=same as TODO_FILE`\
 `PATH_SCRIPTS='/path/to/Scripts'`\
 *instead of **cat** you could use something like **mdless** since this app is *.md* friendly.*\
-`alias todo="cat $PATH_TODO"`\
-`alias addtodo="$PATH_SCRIPTS/add_todo.py"`\
-`alias deltodo="$PATH_SCRIPTS/delete_todo.py"`\
-`alias marktodo="$PATH_SCRIPTS/mark_todo.py"`\
-`alias createtodo="$PATH_SCRIPTS/init_todo.py"`\
+`alias todo="cat \$PATH_TODO"`\
+`alias addtodo="\$PATH_SCRIPTS/add_todo.py"`\
+`alias deltodo="\$PATH_SCRIPTS/delete_todo.py"`\
+`alias marktodo="\$PATH_SCRIPTS/mark_todo.py"`\
+`alias createtodo="\$PATH_SCRIPTS/init_todo.py"`\
 `alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
 `alias helptodo="$PATH_SCRIPTS/help_todo.py"`\
-`alias searchtodo="$PATH_SCRIPTS/search_todo.py`
+`alias searchtodo="$PATH_SCRIPTS/search_todo.py`\
+`alias hltodo="$PATH_SCRIPTS/hl_todo.py`\
+`alias savetodo=$PATH_SCRIPTS/save_todo.py`\
+`alias cleartodo=$PATH_SCRIPTS/clear_todo.py`
 
 *Finally:*
 source ~/.bashrc
@@ -124,4 +130,25 @@ Replaces an existing todo with a new one.
 Searches for a **highlighted** keyword and returns all TODO's containing it.
 
 | Example: `searchtodo Scala` |
+|---|
+
+### *hltodo*
+
+Highlights a word given a line number.
+
+| Example: `hltodo 13 Monads` |
+|---|
+
+### *savetodo*
+
+Saves a snapshot of the current TODO's file in the $SAVES directory.
+
+| Example: `savetodo` |
+|---|
+
+### *cleartodo*
+
+Deletes all marked TODO's.
+
+| Example: `cleartodo` |
 |---|

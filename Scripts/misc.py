@@ -1,9 +1,15 @@
 ######## MAIN .md FILE ##########
-# !!   CHANGE THIS ONE TO    !! #
+# !!   CHANGE THIS ONES TO    !! #
 # !! YOUR PREFERRED LOCATION !! #
-TODO_FILE = '/preferred/absolute/path'
+TODO_FILE = ''
+SAVES     = ''
 
+if len(TODO_FILE) == 0 or len(SAVES) == 0:
+    print('Please assign a path to the TODO_FILE and SAVES variables from --misc.py--.')
+
+#### Header ####
 TODO_HEADER = '# TODO\'s\n\n'
+
 
 ########### Error Handlers ###########
 def exit_if(bool, message):
@@ -33,6 +39,7 @@ def get_number(line):
     
     return int(number)
 
+
 def get_status(line):
     for i in range(0, len(line)):
         if line[i] == '[' and i < len(line) - 1:
@@ -46,7 +53,7 @@ def last_number():
         last_line = f.readlines()[-1]
                         
         return get_number(last_line)
-    
+ 
 
 def check_line_number(line, todo_number):
     if len(line) == 0 or not line[0].isdigit():
@@ -89,6 +96,24 @@ def get_keywords(line):
     return keywords
 
 
+def decr_line(line):
+    number = ''
+    
+    for digit in line:
+        if not digit.isdigit():
+            break
+        
+        number += digit
+        
+    if len(number) == 0:
+        return line
+    
+    
+    new_number = str(int(number) - 1)
+    
+    return new_number + line[len(number):]
+
+
 
 ############ Error Messages ############
 USAGE_ADD       = '[USAGE]: addtodo <TODO>.'
@@ -97,9 +122,14 @@ USAGE_MARK      = '[USAGE]: marktodo <TODO_NUMBER>.'
 USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
 USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
 USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD>.'
+USAGE_HL        = '[USAGE]: hltodo <TODO_NUMBER> <KEYWORD>.'
 INVALID_NUMBER  = '[ERROR]: Invalid number.'
 INVALID_COMMAND = '[ERROR]: Invalid command.'
+INVALID_OPTION  = '[ERROR]: Invalid option.'
 FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
+
+
+TODO = '[TODO]: Not yet completed.'
 
 ##### Commands descriptions #####
 COMMANDS = '\
@@ -110,4 +140,6 @@ TODO Commands:\n\
 -deltodo\n\
 -replacetodo\n\
 -searchtodo\n\
--helptodo'
+-helptodo\n\
+-hltodo\n\
+-savetodo'

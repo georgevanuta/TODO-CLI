@@ -15,7 +15,7 @@ def print_lines_keyword(keyword):
         
         for line in lines:
             if contains_keyword(line, keyword):
-                print(line, end=" ")
+                print(line, end='')
 
 
 def main():
@@ -28,4 +28,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    

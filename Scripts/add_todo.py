@@ -2,22 +2,36 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_ADD, exit_if, last_number
+from misc import TODO_FILE, USAGE_ADD, INVALID_OPTION, exit_if, last_number
 
 # adds a new todo at the end of the file
-def add_todo(todo):
+def add_todo(todo, marked):
     with open(TODO_FILE, 'a') as f:
         num = str(last_number() + 1)
-        new_todo = num + '. [ ] ' + todo + '\n'
+        
+        status = ''
+        
+        if marked:
+            status = '[x]'
+        else:
+            status = '[ ]'
+        
+        new_todo = num + '. ' + status + ' ' + todo + '\n'
         
         f.write(new_todo)
     
 
 def main():
-    exit_if(len(argv) != 2, USAGE_ADD)
-        
     todo = argv[1]
-    add_todo(todo)
+    options = argv[1:]
+    
+    if len(argv) == 2:
+        add_todo(todo, False)
+    
+    for option in options:
+        if option == '-m' or option == '--mark':
+            add_todo(todo, True)
+    
 
 
 if __name__ == '__main__':

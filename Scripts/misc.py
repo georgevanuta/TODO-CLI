@@ -4,8 +4,10 @@
 TODO_FILE = ''
 SAVES     = ''
 
+
 if len(TODO_FILE) == 0 or len(SAVES) == 0:
     print('Please assign a path to the TODO_FILE and SAVES variables from --misc.py--.')
+
 
 #### Header ####
 TODO_HEADER = '# TODO\'s\n\n'
@@ -133,7 +135,7 @@ TODO = '[TODO]: Not yet completed.'
 
 ##### Commands descriptions #####
 COMMANDS = '\
-TODO Commands:\n\
+    ----TODO Commands----\n\n\
 -createtodo\n\
 -addtodo\n\
 -marktodo\n\
@@ -142,4 +144,5 @@ TODO Commands:\n\
 -searchtodo\n\
 -helptodo\n\
 -hltodo\n\
--savetodo'
+-savetodo\n\
+-cleartodo'

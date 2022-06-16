@@ -31,7 +31,7 @@ Only works on **Linux** or by using **WSL 2**.
 ## Setup
 
 *First of all*, modify the path to the main todo's file and to the saves directory in --misc.py--\
-(modify the **TODO_FILE**  and **SAVES** variables).
+(modify the **TODO_FILE**, **SAVES**, **SCRIPTS** variables).
 
 *Then*, add the following lines at the bottom of your **~/.bashrc** file:\
 `PATH_TODO=same as TODO_FILE`\

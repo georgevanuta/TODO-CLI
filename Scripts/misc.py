@@ -3,10 +3,10 @@
 # !! YOUR PREFERRED LOCATION !! #
 TODO_FILE = ''
 SAVES     = ''
+SCRIPTS   = ''
 
-
-if len(TODO_FILE) == 0 or len(SAVES) == 0:
-    print('Please assign a path to the TODO_FILE and SAVES variables from --misc.py--.')
+if len(TODO_FILE) == 0 or len(SAVES) == 0 or len(SCRIPTS) == 0:
+    print('Please assign a path to the TODO_FILE, SAVES, SCRIPTS variables from --misc.py--.')
 
 
 #### Header ####
@@ -125,11 +125,23 @@ USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
 USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
 USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD>.'
 USAGE_HL        = '[USAGE]: hltodo <TODO_NUMBER> <KEYWORD>.'
+
 INVALID_NUMBER  = '[ERROR]: Invalid number.'
 INVALID_COMMAND = '[ERROR]: Invalid command.'
 INVALID_OPTION  = '[ERROR]: Invalid option.'
 FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
 
+### OPTIONS ###
+SEARCH_FLAGS = ['-md', '--mdless',\
+                '-m', '--marked',\
+                '-u', '--unmarked']
+
+ADD_FLAGS    = ['-m', '--mark']
+
+CLEAR_FLAGS  = ['-s', '--save']
+
+
+AUX_FILE = SCRIPTS + '/aux_search.md'
 
 TODO = '[TODO]: Not yet completed.'
 

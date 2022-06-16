@@ -2,7 +2,7 @@
 
 from sys import argv
 
-from misc import TODO_FILE, INVALID_OPTION, get_status, decr_line
+from misc import TODO_FILE, INVALID_OPTION, CLEAR_FLAGS, exit_if, get_status, decr_line
 import save_todo
 
 
@@ -35,14 +35,13 @@ def del_marked():
 
 
 def main():
-    options = argv[1:]
+    flags = argv[1:]
 
-    for option in options:
-        if option == '-s' or option == '--save':
+    for flag in flags:
+        exit_if(not CLEAR_FLAGS.__contains__(flag), INVALID_OPTION)
+
+        if flag == '-s' or flag == '--save':
             save_todo.main()
-        else:
-            print(INVALID_OPTION)
-            exit(2)
 
     del_marked()
 

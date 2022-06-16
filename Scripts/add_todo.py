@@ -2,7 +2,7 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_ADD, INVALID_OPTION, exit_if, last_number
+from misc import TODO_FILE, USAGE_ADD, INVALID_OPTION, ADD_FLAGS, exit_if, last_number
 
 # adds a new todo at the end of the file
 def add_todo(todo, marked):
@@ -23,15 +23,19 @@ def add_todo(todo, marked):
 
 def main():
     todo = argv[1]
-    options = argv[1:]
+    flags = argv[2:]
     
-    if len(argv) == 2:
-        add_todo(todo, False)
+    exit_if(len(argv) < 2, USAGE_ADD)
     
-    for option in options:
-        if option == '-m' or option == '--mark':
-            add_todo(todo, True)
+    marked = False
     
+    for flag in flags:
+        exit_if(not ADD_FLAGS.__contains__(flag), INVALID_OPTION)
+        
+        if flag == '-m' or flag == '--mark':
+            marked = True
+    
+    add_todo(todo, marked)
 
 
 if __name__ == '__main__':

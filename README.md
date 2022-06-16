@@ -19,6 +19,7 @@ This is a lightweight app that lets you easily keep your tasks in check right fr
     - [*hltodo*](#hltodo)
     - [*savetodo*](#savetodo)
     - [*cleartodo*](#cleartodo)
+    - [*loadtodo*](#loadtodo)
 
 ## Prerequisites
 
@@ -48,6 +49,7 @@ Only works on **Linux** or by using **WSL 2**.
 `alias hltodo="$PATH_SCRIPTS/hl_todo.py`\
 `alias savetodo=$PATH_SCRIPTS/save_todo.py`\
 `alias cleartodo=$PATH_SCRIPTS/clear_todo.py`
+`alias loadotod=$PATH_SCRIPTS/load_todo.py`
 
 *Finally:*
 source ~/.bashrc
@@ -151,4 +153,11 @@ Saves a snapshot of the current TODO's file in the $SAVES directory.
 Deletes all marked TODO's.
 
 | Example: `cleartodo` |
+|---|
+
+### *loadtodo*
+
+Loads a previous save in the current TODO's file.
+
+| Example: `loadtodo 4` |
 |---|

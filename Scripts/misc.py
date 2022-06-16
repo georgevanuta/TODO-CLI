@@ -3,7 +3,7 @@
 # !! YOUR PREFERRED LOCATION !! #
 TODO_FILE = ''
 SAVES     = ''
-SCRIPTS   = ''
+SCRIPTS   = '' # This is the directory of this file
 
 if len(TODO_FILE) == 0 or len(SAVES) == 0 or len(SCRIPTS) == 0:
     print('Please assign a path to the TODO_FILE, SAVES, SCRIPTS variables from --misc.py--.')

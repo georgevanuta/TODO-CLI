@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-from sys import argv, flags
+from sys import argv
 from os import system
 
-from misc import TODO_FILE, AUX_FILE, USAGE_SEARCH, SEARCH_FLAGS, INVALID_OPTION, exit_if, get_keywords, get_status
+from misc import TODO_FILE, AUX_FILE, USAGE_SEARCH, SEARCH_FLAGS, INVALID_FLAG, exit_if, get_keywords, get_status
 
 
 def contains_keyword(line, keyword):
@@ -39,15 +39,11 @@ def main():
     
     keyword = argv[1].lower()
     
-    if len(flags) == 0:
-        print_lines_keyword(keyword, False)
-        exit(0)
-        
     format_md = False
     status = ''
     
     for flag in flags:
-        exit_if(not SEARCH_FLAGS.__contains__(flag), INVALID_OPTION)
+        exit_if(not SEARCH_FLAGS.__contains__(flag), INVALID_FLAG)
         
         if flag == '-md' or flag == '--mdless':
             format_md = True

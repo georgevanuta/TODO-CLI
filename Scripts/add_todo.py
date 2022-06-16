@@ -2,7 +2,7 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_ADD, INVALID_OPTION, ADD_FLAGS, exit_if, last_number
+from misc import TODO_FILE, USAGE_ADD, INVALID_FLAG, ADD_FLAGS, exit_if, last_number
 
 # adds a new todo at the end of the file
 def add_todo(todo, marked):
@@ -30,7 +30,7 @@ def main():
     marked = False
     
     for flag in flags:
-        exit_if(not ADD_FLAGS.__contains__(flag), INVALID_OPTION)
+        exit_if(not ADD_FLAGS.__contains__(flag), INVALID_FLAG)
         
         if flag == '-m' or flag == '--mark':
             marked = True

@@ -58,7 +58,11 @@ For 1 argument prints the description of the command given as an argument.')
             print('\
     ----searchtodo----\n\n\
 Takes one argument which is the keyword.\n\
-Searches through all lines of the TODO\'s file and prints the lines containins the keyword.')    
+Searches through all lines of the TODO\'s file and prints the lines containins the keyword.\n\
+Has the following flags:\n\
+    -md or --mdless   == uses mdless instead of cat for showing.\n\
+    -m  or --marked   == only shows the marked TODO\'s\n\
+    -u  or --unmarked == only shows the unmarked TODO\'s')    
 
         elif command == 'hltodo':
             print('\
@@ -79,6 +83,13 @@ Deletes all marked TODO\'s.\n\n\
 Has the following flags:\n\
     -s or --save == saves a current snapshot of the TODO\'s (similar to savetodo) before deleting.')
 
+        elif command == 'loadtodo':
+            print('\
+    ----loadtodo----\n\n\
+Loads a previous save in the current TODO\'s file.\n\n\
+Has the following flags:\n\
+    -s or --save == saves a current snapshot of the TODO\'s (similar to savetodo) before\n\
+changing to the previous save.')
         else:
             print(INVALID_COMMAND)
           

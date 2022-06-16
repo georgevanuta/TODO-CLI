@@ -1,9 +1,15 @@
 ######## MAIN .md FILE ##########
 # !!   CHANGE THIS ONES TO    !! #
 # !! YOUR PREFERRED LOCATION !! #
+
+
+from os import path, mkdir
+from glob import glob
+
+
 TODO_FILE = ''
 SAVES     = ''
-SCRIPTS   = '' # This is the directory of this file
+SCRIPTS   = ''
 
 if len(TODO_FILE) == 0 or len(SAVES) == 0 or len(SCRIPTS) == 0:
     print('Please assign a path to the TODO_FILE, SAVES, SCRIPTS variables from --misc.py--.')
@@ -116,19 +122,48 @@ def decr_line(line):
     return new_number + line[len(number):]
 
 
+def get_file_number(file_name):
+    start = file_name.find('_') + 1
+    end = file_name.find('.')
+
+    return int(file_name[start : end])
+
+
+def max_save_number():
+    if not path.exists(SAVES):
+        mkdir(SAVES)
+        
+    files = glob(SAVES + '/*.md')
+    
+    max = -1
+    
+    for file in files:
+        simple_name = file.split("/")[-1]
+        num = get_file_number(simple_name)
+        
+        if num > max:
+            max = num
+    
+    return max
+
+
+def save_path(save_number):
+    return SAVES + '/' + 'save_' + str(save_number) + '.md'
+
 
 ############ Error Messages ############
-USAGE_ADD       = '[USAGE]: addtodo <TODO>.'
+USAGE_ADD       = '[USAGE]: addtodo <TODO> [OPTIONS].'
 USAGE_DEL  	    = '[USAGE]: deltodo <TODO_NUMBER>.'
 USAGE_MARK      = '[USAGE]: marktodo <TODO_NUMBER>.'
 USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
 USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
-USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD>.'
+USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD> [OPTIONS].'
 USAGE_HL        = '[USAGE]: hltodo <TODO_NUMBER> <KEYWORD>.'
+USAGE_LOAD      = '[USAGE]: loadtodo <SAVE_NUMBER> [OPTIONS].'
 
 INVALID_NUMBER  = '[ERROR]: Invalid number.'
 INVALID_COMMAND = '[ERROR]: Invalid command.'
-INVALID_OPTION  = '[ERROR]: Invalid option.'
+INVALID_FLAG    = '[ERROR]: Invalid flag.'
 FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
 
 ### OPTIONS ###
@@ -140,6 +175,7 @@ ADD_FLAGS    = ['-m', '--mark']
 
 CLEAR_FLAGS  = ['-s', '--save']
 
+LOAD_FLAGS   = ['-s', '--save']
 
 AUX_FILE = SCRIPTS + '/aux_search.md'
 
@@ -157,4 +193,5 @@ COMMANDS = '\
 -helptodo\n\
 -hltodo\n\
 -savetodo\n\
--cleartodo'
+-cleartodo\n\
+-loadtodo'

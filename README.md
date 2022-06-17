@@ -48,7 +48,7 @@ Only works on **Linux** or by using **WSL 2**.
 `alias searchtodo="$PATH_SCRIPTS/search_todo.py`\
 `alias hltodo="$PATH_SCRIPTS/hl_todo.py`\
 `alias savetodo=$PATH_SCRIPTS/save_todo.py`\
-`alias cleartodo=$PATH_SCRIPTS/clear_todo.py`
+`alias cleartodo=$PATH_SCRIPTS/clear_todo.py`\
 `alias loadotod=$PATH_SCRIPTS/load_todo.py`
 
 *Finally:*

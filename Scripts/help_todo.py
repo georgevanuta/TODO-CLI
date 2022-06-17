@@ -2,7 +2,8 @@
 
 from sys import argv
 
-from misc import COMMANDS, INVALID_COMMAND, USAGE_HELP, exit_if
+from misc import exit_if,\
+                 COMMANDS, INVALID_COMMAND, USAGE_HELP
 
 
 def main():
@@ -31,6 +32,7 @@ Has the following flags:\n\
             print('\
     ----marktodo----\n\n\
 Takes one argument which is the number of the TODO you want to mark/unmark.\n\
+If given zero arguments marks/unmarks the last TODO.\n\
 Toggles the status of the corresponding TODO.')
 
         elif command == 'deltodo':

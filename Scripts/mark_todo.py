@@ -2,7 +2,9 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_MARK, INVALID_NUMBER, exit_if, last_number, check_line_number
+from misc import TODO_FILE,\
+                 exit_if, last_number, check_line_number,\
+                 USAGE_MARK, INVALID_NUMBER
 
 
 # toggles the status of a line
@@ -37,6 +39,10 @@ def mark(todo_number):
 
 
 def main():
+    if len(argv) == 1:
+        mark(last_number())
+        exit(0)
+    
     exit_if(len(argv) != 2 or not argv[1].isnumeric(), USAGE_MARK)
         
     todo_number = int(argv[1])

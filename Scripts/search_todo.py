@@ -3,7 +3,9 @@
 from sys import argv
 from os import system
 
-from misc import TODO_FILE, AUX_FILE, USAGE_SEARCH, SEARCH_FLAGS, INVALID_FLAG, exit_if, get_keywords, get_status
+from misc import TODO_FILE, AUX_FILE,\
+                 exit_if, get_keywords, get_status,\
+                 USAGE_SEARCH, SEARCH_FLAGS, INVALID_FLAG
 
 
 def contains_keyword(line, keyword):

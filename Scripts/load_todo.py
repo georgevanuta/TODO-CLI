@@ -2,11 +2,12 @@
 
 from sys import argv
 
-from misc import TODO_FILE, SAVES,\
-    get_file_number, max_save_number, exit_if, save_path,\
-    USAGE_LOAD, INVALID_FLAG, LOAD_FLAGS, INVALID_NUMBER
+from misc import TODO_FILE,\
+                 max_save_number, exit_if, save_path,\
+                 USAGE_LOAD, INVALID_FLAG, LOAD_FLAGS, INVALID_NUMBER
 
 import save_todo
+
 
 def load_save(save_number, should_save):
     if should_save:

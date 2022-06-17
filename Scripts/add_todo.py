@@ -2,7 +2,9 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_ADD, INVALID_FLAG, ADD_FLAGS, exit_if, last_number
+from misc import TODO_FILE,\
+                 exit_if, last_number,\
+                 USAGE_ADD, INVALID_FLAG, ADD_FLAGS
 
 # adds a new todo at the end of the file
 def add_todo(todo, marked):

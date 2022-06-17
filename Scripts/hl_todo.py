@@ -2,7 +2,9 @@
 
 from sys import argv
 
-from misc import TODO_FILE, INVALID_NUMBER, USAGE_HL, exit_if, last_number, check_line_number, get_keywords
+from misc import TODO_FILE,\
+                 exit_if, last_number, check_line_number, get_keywords,\
+                 INVALID_NUMBER, USAGE_HL
 
 
 def higlight_word(word, keyword):
@@ -15,6 +17,7 @@ def higlight_word(word, keyword):
     return new_word
 
 
+# highlights a given keyword in a line
 def highlight_line(line, keyword):
     if get_keywords(line.lower()).__contains__(keyword):
         return line
@@ -62,7 +65,8 @@ def main():
     keyword = argv[2].lower()
     
     highlight(todo_number, keyword)
-    
+
+
 if __name__ == '__main__':
     main()
     

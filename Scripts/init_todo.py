@@ -2,7 +2,9 @@
 
 from os.path import exists
 
-from misc import FILE_EXISTS, TODO_FILE, TODO_HEADER, exit_if
+from misc import TODO_FILE,\
+                 exit_if,\
+                 FILE_EXISTS, TODO_HEADER
 
 
 def main():
@@ -12,6 +14,7 @@ def main():
     
     with open(TODO_FILE, 'w') as f:
         f.write(TODO_HEADER)
+
 
 if __name__ == '__main__':
     main()

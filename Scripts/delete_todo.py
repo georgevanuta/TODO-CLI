@@ -2,7 +2,9 @@
 
 from sys import argv
 
-from misc import TODO_FILE, USAGE_DEL, INVALID_NUMBER, exit_if, last_number, check_line_number, decr_line
+from misc import TODO_FILE,\
+                 exit_if, last_number, check_line_number, decr_line,\
+                 USAGE_DEL, INVALID_NUMBER
 
 
 # deletes the todo and decrements 

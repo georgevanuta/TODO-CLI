@@ -1,11 +1,9 @@
-######## MAIN .md FILE ##########
-# !!   CHANGE THIS ONES TO    !! #
-# !! YOUR PREFERRED LOCATION !! #
-
-
 from os import path, mkdir
 from glob import glob
 
+######## MAIN .md FILE ##########
+# !!   CHANGE THIS ONES TO    !! #
+# !! YOUR PREFERRED LOCATION  !! #
 
 TODO_FILE = ''
 SAVES     = ''
@@ -13,7 +11,7 @@ SCRIPTS   = ''
 
 if len(TODO_FILE) == 0 or len(SAVES) == 0 or len(SCRIPTS) == 0:
     print('Please assign a path to the TODO_FILE, SAVES, SCRIPTS variables from --misc.py--.')
-
+##################################
 
 #### Header ####
 TODO_HEADER = '# TODO\'s\n\n'
@@ -26,11 +24,29 @@ def exit_if(bool, message):
         exit(2)
 
 
-# Need it defined here.
-EMPTY_FILE = '[ERROR]: Empty file.'
+############ Error Messages ############
+
+### Usages ###
+USAGE_ADD       = '[USAGE]: addtodo <TODO> [OPTIONS].'
+USAGE_DEL  	    = '[USAGE]: deltodo <TODO_NUMBER>.'
+USAGE_MARK      = '[USAGE]: marktodo | marktodo <TODO_NUMBER>.'
+USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
+USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
+USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD> [OPTIONS].'
+USAGE_HL        = '[USAGE]: hltodo <TODO_NUMBER> <KEYWORD>.'
+USAGE_LOAD      = '[USAGE]: loadtodo <SAVE_NUMBER> [OPTIONS].'
+
+### Errors ###
+INVALID_NUMBER  = '[ERROR]: Invalid number.'
+INVALID_COMMAND = '[ERROR]: Invalid command.'
+INVALID_FLAG    = '[ERROR]: Invalid flag.'
+FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
+EMPTY_FILE      = '[ERROR]: Empty file.'
 
         
 ############## Helpers ##############
+
+# parses the line number
 def get_number(line):
     number = ''
     
@@ -48,6 +64,7 @@ def get_number(line):
     return int(number)
 
 
+# parses the status
 def get_status(line):
     for i in range(0, len(line)):
         if line[i] == '[' and i < len(line) - 1:
@@ -56,6 +73,7 @@ def get_status(line):
     return 'none'
 
 
+# returns the last number of the latest TODO
 def last_number():
     with open(TODO_FILE, 'r') as f:
         last_line = f.readlines()[-1]
@@ -63,6 +81,7 @@ def last_number():
         return get_number(last_line)
  
 
+# check if the line number corresponds to the given argument
 def check_line_number(line, todo_number):
     if len(line) == 0 or not line[0].isdigit():
         return False
@@ -78,6 +97,7 @@ def check_line_number(line, todo_number):
     return int(number) == todo_number
 
 
+# parses the keywords
 def get_keywords(line):
     keywords = []
     
@@ -104,6 +124,7 @@ def get_keywords(line):
     return keywords
 
 
+# decrements the line number of a given line
 def decr_line(line):
     number = ''
     
@@ -122,6 +143,7 @@ def decr_line(line):
     return new_number + line[len(number):]
 
 
+# parses the file number
 def get_file_number(file_name):
     start = file_name.find('_') + 1
     end = file_name.find('.')
@@ -129,6 +151,7 @@ def get_file_number(file_name):
     return int(file_name[start : end])
 
 
+# returns the number of the latest file added
 def max_save_number():
     if not path.exists(SAVES):
         mkdir(SAVES)
@@ -147,26 +170,12 @@ def max_save_number():
     return max
 
 
+# constructs a save file from a save number
 def save_path(save_number):
     return SAVES + '/' + 'save_' + str(save_number) + '.md'
 
 
-############ Error Messages ############
-USAGE_ADD       = '[USAGE]: addtodo <TODO> [OPTIONS].'
-USAGE_DEL  	    = '[USAGE]: deltodo <TODO_NUMBER>.'
-USAGE_MARK      = '[USAGE]: marktodo <TODO_NUMBER>.'
-USAGE_REPLACE   = '[USAGE]: replacetodo <TODO_NUMBER> <NEW_TODO>.'
-USAGE_HELP      = '[USAGE]: helptodo | helptodo <TODO_COMMAND>'
-USAGE_SEARCH    = '[USAGE]: searchtodo <KEYWORD> [OPTIONS].'
-USAGE_HL        = '[USAGE]: hltodo <TODO_NUMBER> <KEYWORD>.'
-USAGE_LOAD      = '[USAGE]: loadtodo <SAVE_NUMBER> [OPTIONS].'
-
-INVALID_NUMBER  = '[ERROR]: Invalid number.'
-INVALID_COMMAND = '[ERROR]: Invalid command.'
-INVALID_FLAG    = '[ERROR]: Invalid flag.'
-FILE_EXISTS	    = '[ERROR]: File already exists at ' + TODO_FILE + '.'
-
-### OPTIONS ###
+### FLAGS ###
 SEARCH_FLAGS = ['-md', '--mdless',\
                 '-m', '--marked',\
                 '-u', '--unmarked']
@@ -180,6 +189,7 @@ LOAD_FLAGS   = ['-s', '--save']
 AUX_FILE = SCRIPTS + '/aux_search.md'
 
 TODO = '[TODO]: Not yet completed.'
+
 
 ##### Commands descriptions #####
 COMMANDS = '\

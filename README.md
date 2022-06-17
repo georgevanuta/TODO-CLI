@@ -48,7 +48,7 @@ Only works on **Linux** or by using **WSL 2**.
 `alias searchtodo="$PATH_SCRIPTS/search_todo.py`\
 `alias hltodo="$PATH_SCRIPTS/hl_todo.py`\
 `alias savetodo=$PATH_SCRIPTS/save_todo.py`\
-`alias cleartodo=$PATH_SCRIPTS/clear_todo.py`\
+`alias cleartodo=$PATH_SCRIPTS/clear_todo.py`
 `alias loadotod=$PATH_SCRIPTS/load_todo.py`
 
 *Finally:*
@@ -97,7 +97,7 @@ Adds a new TODO at the end of your TODO's.
 
 ### *marktodo*
 
-Marks a **TODO** by the *line number*.
+Marks the last **TODO**. If given a line number, marks the **TODO** by the *line number*.
 
 | Example: `marktodo 1` |
 |---|

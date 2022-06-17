@@ -2,10 +2,14 @@
 
 from sys import argv
 
-from misc import TODO_FILE, INVALID_FLAG, CLEAR_FLAGS, exit_if, get_status, decr_line
+from misc import TODO_FILE,\
+                 exit_if, get_status, decr_line,\
+                 INVALID_FLAG, CLEAR_FLAGS
+
 import save_todo
 
 
+# decrements the line number n times
 def decr_line_n(line, n):
     new_line = line
 
@@ -15,6 +19,7 @@ def decr_line_n(line, n):
     return new_line
 
 
+# deletes all lines with given status
 def del_marked():
     with open(TODO_FILE, 'r+') as f:
         lines = f.readlines()

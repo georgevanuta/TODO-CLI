@@ -49,10 +49,10 @@ Only works on **Linux** or by using **WSL 2**.
 `alias hltodo="$PATH_SCRIPTS/hl_todo.py`\
 `alias savetodo=$PATH_SCRIPTS/save_todo.py`\
 `alias cleartodo=$PATH_SCRIPTS/clear_todo.py`\
-`alias loadotod=$PATH_SCRIPTS/load_todo.py`
+`alias loadotodo=$PATH_SCRIPTS/load_todo.py`
 
 *Finally:*
-source ~/.bashrc
+`source ~/.bashrc`
 
 ## Demo
 
@@ -76,21 +76,21 @@ source ~/.bashrc
 
 ### *todo*
 
-Displays the contents of your TODO's.
+Displays the contents of your **TODO**'s.
 
 | Example: `todo` |
 |---|
 
 ### *createtodo*
 
-Initalizes an empty TODO's file in the specified path (*TODO_FILE*).
+Initalizes an empty **TODO**'s file in the specified path (*TODO_FILE*).
 
 | Example: `createtodo`|
 |---|
 
 ### *addtodo*
 
-Adds a new TODO at the end of your TODO's.
+Adds a new **TODO** at the end of your **TODO**'s.
 
 | Example: `addtodo "Learn Haskell."`|
 |---|
@@ -113,7 +113,7 @@ Deletes a **TODO** by the *line number*.
 
 ### *helptodo*
 
-Shows useful information about the TODO commands or lists them.
+Shows useful information about the **TODO** commands or lists them.
 
 | Example: `helptodo replacetodo` |
 |---|
@@ -129,7 +129,7 @@ Replaces an existing todo with a new one.
 
 ### *searchtodo*
 
-Searches for a **highlighted** keyword and returns all TODO's containing it.
+Searches for a **highlighted** keyword and returns all **TODO**'s containing it.
 
 | Example: `searchtodo Scala` |
 |---|
@@ -143,21 +143,21 @@ Highlights a word given a line number.
 
 ### *savetodo*
 
-Saves a snapshot of the current TODO's file in the $SAVES directory.
+Saves a snapshot of the current **TODO**'s file in the $SAVES directory.
 
 | Example: `savetodo` |
 |---|
 
 ### *cleartodo*
 
-Deletes all marked TODO's.
+Deletes all marked **TODO**'s.
 
 | Example: `cleartodo` |
 |---|
 
 ### *loadtodo*
 
-Loads a previous save in the current TODO's file.
+Loads a previous save in the current **TODO**'s file.
 
 | Example: `loadtodo 4` |
 |---|

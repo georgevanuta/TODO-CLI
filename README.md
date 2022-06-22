@@ -37,8 +37,7 @@ Only works on **Linux** or by using **WSL 2**.
 *Then*, add the following lines at the bottom of your **~/.bashrc** file:\
 `PATH_TODO=same as TODO_FILE`\
 `PATH_SCRIPTS='/path/to/Scripts'`\
-*instead of **cat** you could use something like **mdless** since this app is *.md* friendly.*\
-`alias todo="cat $PATH_TODO"`\
+`alias todo="$PATH_SCRIPTS_TODO/print_todo.sh"`\
 `alias addtodo="$PATH_SCRIPTS/add_todo.py"`\
 `alias deltodo="$PATH_SCRIPTS/delete_todo.py"`\
 `alias marktodo="$PATH_SCRIPTS/mark_todo.py"`\

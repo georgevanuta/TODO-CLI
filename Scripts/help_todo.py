@@ -14,8 +14,14 @@ def main():
     
     elif len(argv) == 2:
         command = argv[1]
+        if command == 'todo':
+            print('\
+    ----todo----\n\n\
+Prints all TODO\'s in mdless format.\n\n\
+Has the foolowing flags:\n\
+    -c or -cat == Prints in cat format.(Recommended if mdless is not installed.)')
         
-        if command == 'createtodo':
+        elif command == 'createtodo':
             print('\
     ----createtodo----\n\n\
 Creates an empty TODO\'s file in the $TODO_FILE path.')

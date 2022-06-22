@@ -1,13 +1,15 @@
-from os import path, mkdir
+from os import path,\
+               mkdir
 from glob import glob
+
 
 ######## MAIN .md FILE ##########
 # !!   CHANGE THIS ONES TO    !! #
 # !! YOUR PREFERRED LOCATION  !! #
 
-TODO_FILE = ''
-SAVES     = ''
-SCRIPTS   = ''
+TODO_FILE = '/mnt/e/Programming/ideas.md'
+SAVES     = '/mnt/e/Programming/Saves'
+SCRIPTS   = '/mnt/e/Programming/TODO-CLI/Scripts'
 
 if len(TODO_FILE) == 0 or len(SAVES) == 0 or len(SCRIPTS) == 0:
     print('Please assign a path to the TODO_FILE, SAVES, SCRIPTS variables from --misc.py--.')
@@ -194,6 +196,7 @@ TODO = '[TODO]: Not yet completed.'
 ##### Commands descriptions #####
 COMMANDS = '\
     ----TODO Commands----\n\n\
+-todo\n\
 -createtodo\n\
 -addtodo\n\
 -marktodo\n\

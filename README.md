@@ -1,25 +1,18 @@
-# TODO's Management in CLI
+# BOOKMARK's Management in CLI
 
-This is a lightweight app that lets you easily keep your tasks in check right from the CLI.
+This is an app that lets you keep bookmarks of your books located in different files from the CLI.
 
-[TODO's Management in CLI](#todos-management-in-cli)
+[BOOKMARK's Management in CLI](#bookmarks-management-in-cli)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Setup](#setup)
   - [Demo](#demo)
   - [Commands](#commands)
-    - [*todo*](#todo)
-    - [*createtodo*](#createtodo)
-    - [*addtodo*](#addtodo)
-    - [*marktodo*](#marktodo)
-    - [*deltodo*](#deltodo)
-    - [*helptodo*](#helptodo)
-    - [*replacetodo*](#replacetodo)
-    - [*searchtodo*](#searchtodo)
-    - [*hltodo*](#hltodo)
-    - [*savetodo*](#savetodo)
-    - [*cleartodo*](#cleartodo)
-    - [*loadtodo*](#loadtodo)
+    - [bm](#bm)
+    - [initbm](#bm)
+    - [delbm](#delbm)
+    - [addbm](#addbm)
+    - [gotobm](#gotobm)
 
 ## Prerequisites
 
@@ -27,136 +20,62 @@ Only works on **Linux** or by using **WSL 2**.
 
 ## Installation
 
-`git clone https://github.com/georgevanuta/TODO-CLI`
+`git clone https://github.com/georgevanuta/Bookmarks-CLI-app`
 
 ## Setup
 
-*First of all*, modify the path to the main todo's file and to the saves directory in --misc.py--\
-(modify the **TODO_FILE**, **SAVES**, **SCRIPTS** variables).
+*Firstly*, modify the path to the **BOOKS_FILE** and **BOOKMARKS_FILE**.
 
-*Then*, add the following lines at the bottom of your **~/.bashrc** file:\
-`PATH_TODO=same as TODO_FILE`\
-`PATH_SCRIPTS='/path/to/Scripts'`\
-`alias todo="$PATH_SCRIPTS_TODO/print_todo.sh"`\
-`alias addtodo="$PATH_SCRIPTS/add_todo.py"`\
-`alias deltodo="$PATH_SCRIPTS/delete_todo.py"`\
-`alias marktodo="$PATH_SCRIPTS/mark_todo.py"`\
-`alias createtodo="$PATH_SCRIPTS/init_todo.py"`\
-`alias replacetodo="$PATH_SCRIPTS/replace_todo.py"`\
-`alias helptodo="$PATH_SCRIPTS/help_todo.py"`\
-`alias searchtodo="$PATH_SCRIPTS/search_todo.py`\
-`alias hltodo="$PATH_SCRIPTS/hl_todo.py`\
-`alias savetodo=$PATH_SCRIPTS/save_todo.py`\
-`alias cleartodo=$PATH_SCRIPTS/clear_todo.py`\
-`alias loadotodo=$PATH_SCRIPTS/load_todo.py`
+*Then*, add the following lines at the bottom of your **~/.bashrc** file:
+`PATH_SCRIPTS_BM='/mnt/e/Programming/BOOKMARK-CLI/Scripts'`\
+`alias bm="$PATH_SCRIPTS_BM/print_bookmarks.py"`\
+`alias initbm="$PATH_SCRIPTS_BM/init_bookmarks.py"`\
+`alias delbm="$PATH_SCRIPTS_BM/remove_bookmark.py"`\
+`alias addbm="$PATH_SCRIPTS_BM/add_bookmark.py"`\
+`alias gotobm="$PATH_SCRIPTS_BM/goto_bookmark.sh"`
 
 *Finally:*
 `source ~/.bashrc`
 
 ## Demo
 
--Create the TODO's file:\
-`createtodo`\
--Then, check that we created it:\
-`todo`\
--Let's add some todo's:\
-`addtodo "Listen to Death Grips."`\
-`addtodo "Make a TODO management app."`\
-`addtodo "Learn for exams."`\
-`todo`\
--Mark what we've done:\
-`marktodo 1`\
-`marktodo 2`\
-`todo`\
--Delete what we won't do today:\
-`deltodo 3`
+-Move to a directory where you have a book.
+-`initbm "some great book by some great author"` *starts a bookmarks file in the current directory*
+-`bm --all` *to see that it was added corectly*
+-`addbm 13 "cool part"` *adds a bookmark to page 13 with description "cool part" at the current date*
+-`bm` *shows all bookmarks from the current directory*
+-`delbm` *deletes the bookmark file*
 
 ## Commands
 
-### *todo*
+### bm
 
-Displays the contents of your **TODO**'s.
+Shows the bookmarks from the current directory.
 
-| Example: `todo` |
+| Example: `bm` |
 |---|
 
-### *createtodo*
+### initbm
 
-Initalizes an empty **TODO**'s file in the specified path (*TODO_FILE*).
+Starts a bookmarks file in the current directory.
 
-| Example: `createtodo`|
+| Example: `initbm "book example"` |
 |---|
 
-### *addtodo*
+### addbm
 
-Adds a new **TODO** at the end of your **TODO**'s.
+Adds a bookmark to the current bookmarks file.
 
-| Example: `addtodo "Learn Haskell."`|
+| Example: `addbm 13 "cool stuff here"` |
 |---|
 
-### *marktodo*
+### delbm
 
-Marks the last **TODO**. If given a line number, marks the **TODO** by the *line number*.
+Deletes the bookmarks file from the current directory.
 
-| Example: `marktodo 1` |
+| Example: `delbm` |
 |---|
 
-**Note:** If a **TODO** is already *marked*, **marktodo** will *unmark* it.
+### gotobm
 
-### *deltodo*
-
-Deletes a **TODO** by the *line number*.
-
-| Example: `deltodo 1`|
-|---|
-
-### *helptodo*
-
-Shows useful information about the **TODO** commands or lists them.
-
-| Example: `helptodo replacetodo` |
-|---|
-
-**Note:** If it receives zero arguments it lists all possible commands.
-
-### *replacetodo*
-
-Replaces an existing todo with a new one.
-
-| Example: `replacetodo 3 "Buy Three Bedrooms in a Good Neighborhood"` |
-|---|
-
-### *searchtodo*
-
-Searches for a **highlighted** keyword and returns all **TODO**'s containing it.
-
-| Example: `searchtodo Scala` |
-|---|
-
-### *hltodo*
-
-Highlights a word given a line number.
-
-| Example: `hltodo 13 Monads` |
-|---|
-
-### *savetodo*
-
-Saves a snapshot of the current **TODO**'s file in the $SAVES directory.
-
-| Example: `savetodo` |
-|---|
-
-### *cleartodo*
-
-Deletes all marked **TODO**'s.
-
-| Example: `cleartodo` |
-|---|
-
-### *loadtodo*
-
-Loads a previous save in the current **TODO**'s file.
-
-| Example: `loadtodo 4` |
-|---|
+Changes directory to the one containing the title given as argument.

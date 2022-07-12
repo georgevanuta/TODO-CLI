@@ -2,10 +2,8 @@
 
 This is a lightweight app that lets you easily keep your tasks in check right from the CLI.
 
-Example of a **TODO** list from the **CLI**: \
-<img src="https://user-images.githubusercontent.com/74255152/178488225-0cc79173-06c7-4d66-9d46-04a8e2efbc52.png">
-
 [TODO's Management in CLI](#todos-management-in-cli)
+  - [Example](#example)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Setup](#setup)
@@ -23,6 +21,9 @@ Example of a **TODO** list from the **CLI**: \
     - [*savetodo*](#savetodo)
     - [*cleartodo*](#cleartodo)
     - [*loadtodo*](#loadtodo)
+
+## Example
+<img src="https://user-images.githubusercontent.com/74255152/178488225-0cc79173-06c7-4d66-9d46-04a8e2efbc52.png">
 
 ## Prerequisites
 
